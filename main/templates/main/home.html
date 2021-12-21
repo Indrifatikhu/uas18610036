@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Symmetric Cryptography</title>
+{% endblock meta %}
+
+{% block content %}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+
+  <div class="header">
+    <div class="header-logo"><img src="{% static 'img/Zemangats.png' %}" width="15%" height="15%" position="center" alt="" srcset=""></div>
+    <div class="header-list">
+      <ul>
+        <li>Rumah</li>
+        <li>How To Use</li>
+        <li>Contact us</li>
+        <li>About</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h2>Symmetric Cryptography</h2>
+  </div>
+
+
+	<div class="container">
+    <div class="row" style="padding-top: 50px;">  
+
+    <!-- Enkripsi -->
+    <div class="col-12 col-md-6" style="padding-bottom: 40px;">
+      <h1 style="color: #2a2945; padding-bottom: 2px;">Encryption</h1>
+      <form id="encrypt" action="index.html">
+        <div class="form-group">
+          <textarea class="form-control" id="message" placeholder="Enter message here..."></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="secret" id="secret" placeholder="Enter secret key...">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-block" style="background-color: #2a2945; color: white;">Encrypt Message</button>
+        </div>
+      </form>
+      
+      <label for="cipher">Cipher Text</label>
+      <textarea class="form-control" id="ciphertext" type="text" name="cipher" readonly></textarea>
+    </div>
+
+    <!-- Dekripsi -->
+    <div class="col-12 col-md-6">
+      <h1 style="color: #2a2945; padding-bottom: 2px;">Decryption</h1>
+      <form id="decrypt">
+        <div class="form-group">
+          <textarea class="form-control" id="cipher2" placeholder="Enter cipher here..."></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="secret" id="secret2" placeholder="Enter secret key...">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-block" style="background-color: #2a2945; color: white;">Decrypt Message</button>
+        </div>
+      </form>
+      
+      <label for="cipher">Original Message</label>
+      <textarea class="form-control" type="text" name="cipher" id="result" readonly></textarea>
+    </div>
+    </div>
+  </div>
+
+  
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+
+
+
+    <!-- <p><img src="{% static 'img/Zemangats.png' %}" width="10%" height="10%"></p> -->
+  
+  
+{% endblock content %}
